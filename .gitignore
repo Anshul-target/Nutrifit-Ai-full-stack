@@ -7,7 +7,7 @@ server/node_modules/
 server/.env
 
 # Build output
-
+dist/
 build/
 
 # Uploads (user uploaded files)
