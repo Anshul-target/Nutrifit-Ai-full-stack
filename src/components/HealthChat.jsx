@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-
+import API_BASE from "../config.js";
 function HealthChat() {
   const [messages, setMessages] = useState([]); // Chat history: { role, content, image?, timestamp }
   const [question, setQuestion] = useState("");
@@ -11,7 +11,7 @@ function HealthChat() {
   const messagesEndRef = useRef(null);
   const { token } = useAuth();
 
-  const API_BASE = "http://localhost:5000/api";
+  const API_BASE = `${API_BASE}/api`;
 
   // Check if Python health API is available
   useEffect(() => {

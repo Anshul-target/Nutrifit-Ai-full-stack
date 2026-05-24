@@ -2,7 +2,8 @@ import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
-const API_BASE_URL = "http://localhost:5000/api";
+import API_BASE from "../config.js";
+const API_BASE_URL = `${API_BASE}/api`;
 
 function PhotoPage() {
   const { user, token } = useAuth();

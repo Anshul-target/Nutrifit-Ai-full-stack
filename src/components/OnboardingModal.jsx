@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-
+import API_BASE from "../config.js";
 function OnboardingModal() {
   const { token, updateUser } = useAuth();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const API_BASE = `${API_BASE}/api`;
 
   const [formData, setFormData] = useState({
     age: "",
@@ -64,17 +65,14 @@ function OnboardingModal() {
     setError("");
 
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/onboarding/complete",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(formData),
+      const response = await fetch(`${API_BASE}/onboarding/complete`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-      );
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();

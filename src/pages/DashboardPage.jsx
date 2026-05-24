@@ -5,6 +5,7 @@ import MealCard from "../components/MealCard.jsx";
 import SummaryCard from "../components/SummaryCard.jsx";
 import FeatureCard from "../components/FeatureCard.jsx";
 import OnboardingModal from "../components/OnboardingModal.jsx";
+import API_BASE from "../config.js";
 
 const features = [
   {
@@ -26,6 +27,8 @@ const features = [
   },
 ];
 
+const API_BASE = `${API_BASE}/api`;
+
 function DashboardPage() {
   const { user, token } = useAuth();
   const isGuest = !user;
@@ -45,14 +48,11 @@ function DashboardPage() {
 
     const fetchDashboard = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/onboarding/dashboard",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+        const response = await fetch(`${API_BASE}/onboarding/dashboard`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-        );
+        });
 
         if (!response.ok) {
           throw new Error("Failed to fetch dashboard data");

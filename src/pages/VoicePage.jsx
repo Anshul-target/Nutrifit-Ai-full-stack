@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-
-const API_BASE = "http://localhost:5000/api";
+import API_BASE from "../config";
 const ANALYZE_URL = `${API_BASE}/voice/analyze`;
 const HISTORY_URL = `${API_BASE}/voice/history`;
 

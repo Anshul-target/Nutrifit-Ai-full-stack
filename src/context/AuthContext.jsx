@@ -1,8 +1,9 @@
 import { createContext, useContext, useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config.js";
 
 const AuthContext = createContext(null);
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = `${API_BASE}/api`;
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
