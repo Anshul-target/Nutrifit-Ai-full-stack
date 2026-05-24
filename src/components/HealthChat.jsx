@@ -11,13 +11,13 @@ function HealthChat() {
   const messagesEndRef = useRef(null);
   const { token } = useAuth();
 
-  const API_BASE = `${API_BASE}/api`;
+  const API_BASE1 = `${API_BASE}/api`;
 
   // Check if Python health API is available
   useEffect(() => {
     const checkHealth = async () => {
       try {
-        const res = await fetch(`${API_BASE}/health/status`);
+        const res = await fetch(`${API_BASE1}/health/status`);
         if (res.ok) {
           setApiStatus("connected");
         } else {

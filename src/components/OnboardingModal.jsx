@@ -6,7 +6,7 @@ function OnboardingModal() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const API_BASE = `${API_BASE}/api`;
+  const API_BASE1 = `${API_BASE}/api`;
 
   const [formData, setFormData] = useState({
     age: "",
@@ -65,7 +65,7 @@ function OnboardingModal() {
     setError("");
 
     try {
-      const response = await fetch(`${API_BASE}/onboarding/complete`, {
+      const response = await fetch(`${API_BASE1}/onboarding/complete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

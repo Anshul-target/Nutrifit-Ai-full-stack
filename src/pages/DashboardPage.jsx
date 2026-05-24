@@ -6,7 +6,7 @@ import SummaryCard from "../components/SummaryCard.jsx";
 import FeatureCard from "../components/FeatureCard.jsx";
 import OnboardingModal from "../components/OnboardingModal.jsx";
 import API_BASE from "../config.js";
-
+const API_BASE1 = `${API_BASE}/api`;
 const features = [
   {
     title: "Personalized meal plans",
@@ -27,8 +27,6 @@ const features = [
   },
 ];
 
-const API_BASE = `${API_BASE}/api`;
-
 function DashboardPage() {
   const { user, token } = useAuth();
   const isGuest = !user;
@@ -48,7 +46,7 @@ function DashboardPage() {
 
     const fetchDashboard = async () => {
       try {
-        const response = await fetch(`${API_BASE}/onboarding/dashboard`, {
+        const response = await fetch(`${API_BASE1}/onboarding/dashboard`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
