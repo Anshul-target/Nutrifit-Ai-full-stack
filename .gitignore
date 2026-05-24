@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Environment variables (NEVER commit these)
+.env
+server/.env
+
+# Build output
+dist/
+build/
+
+# Uploads (user uploaded files)
+server/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite cache
+.vite/
+.sfdx/
